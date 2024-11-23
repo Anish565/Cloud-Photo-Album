@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20              # Specifies Node.js 14 runtime for installation
+
+  build:
+    commands:
+      - ls -l
+      - echo "Packaging application..."
+      - cd upload-photos
+      - ls -l        # Navigates to the `upload-photos` directory
+      - zip -r ../upload-photos.zip index.mjs   # Zips `index.js` and `AppSpec.yaml` and moves zip to the root
+      - mv AppSpec.yaml ../
+
+artifacts:
+  files:
+    - upload-photos.zip
+    - AppSpec.yaml

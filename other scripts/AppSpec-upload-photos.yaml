@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - upload-photos:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "upload-photos"
+        Alias: "prod"
+        CurrentVersion: "2"
+        TargetVersion: "1"
